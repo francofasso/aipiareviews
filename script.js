@@ -6,6 +6,7 @@
   if (list) {
     var searchInput = document.querySelector("[data-review-search]");
     var sortSelect = document.querySelector("[data-review-sort]");
+    var sourceFilter = document.querySelector("[data-review-source-filter]");
     var liveCount = document.querySelector("[data-review-count]");
     var noResults = document.querySelector("[data-no-results]");
     var items = Array.prototype.slice.call(
@@ -18,10 +19,14 @@
 
     function applyFilter() {
       var term = normalize(searchInput ? searchInput.value : "");
+      var sourceWanted = sourceFilter ? sourceFilter.value : "";
       var visible = 0;
       items.forEach(function (item) {
         var haystack = normalize(item.getAttribute("data-search"));
-        var match = term === "" || haystack.indexOf(term) !== -1;
+        var matchesTerm = term === "" || haystack.indexOf(term) !== -1;
+        var matchesSource =
+          sourceWanted === "" || item.getAttribute("data-source") === sourceWanted;
+        var match = matchesTerm && matchesSource;
         item.style.display = match ? "" : "none";
         if (match) visible += 1;
       });
@@ -59,6 +64,9 @@
 
     if (searchInput) {
       searchInput.addEventListener("input", applyFilter);
+    }
+    if (sourceFilter) {
+      sourceFilter.addEventListener("change", applyFilter);
     }
     if (sortSelect) {
       sortSelect.addEventListener("change", applySort);
