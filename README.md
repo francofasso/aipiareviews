@@ -4,19 +4,24 @@ Sito statico (nessun build necessario per andare online: questi sono già i file
 
 ## Contenuto
 
-- `index.html`: home con le recensioni (102 in totale: 10 Google Maps con link alla scheda AIPIA, 2 Trustpilot con link alla recensione originale, 90 multi-canale da varie fonti dirette).
-- `chi-siamo.html`, `privacy-policy.html`, `cookie-policy.html`, `lascia-recensione.html`: le altre pagine.
-- `style.css`, `script.js`: stile e funzionalità (ricerca/filtro/ordinamento recensioni, banner cookie, invio form).
+- `index.html`: home con le 102 recensioni (10 Google Maps + 2 Trustpilot con link alla recensione originale, 90 multi-canale da varie fonti dirette).
+- `chi-siamo.html`, `privacy-policy.html`, `cookie-policy.html`, `lascia-recensione.html`, `404.html`: le altre pagine.
+- `style.css`, `script.js`: stile (font Fraunces/Inter, palette navy/oro) e funzionalità (ricerca/filtro/ordinamento recensioni, banner cookie).
 - `robots.txt`, `sitemap.xml`, `llms.txt`: file SEO e per i crawler AI.
 - `site.webmanifest`, icone: PWA/favicon.
 - `vercel.json`: URL puliti e header di sicurezza per Vercel.
 
+## Nota
+
+Questo file torna al design che avevi già approvato (quello caricato in chat), non alla versione "strana" generata subito dopo il ripristino dell'ambiente. Tutte le 102 recensioni sono state riportate dentro questo design.
+
 ## Fonti delle recensioni
 
-- Google Maps (10): link alla scheda ufficiale AIPIA su Google.
-- Trustpilot (2): link diretto alla recensione originale.
-- Le altre 90 provengono da canali diretti (WhatsApp, email, LinkedIn, Instagram, Facebook Messenger, Telegram, feedback post-corso/webinar/evento/call, soci). Queste fonti non hanno un link pubblico, quindi non mostrano il badge "fonte verificabile" ma solo l'etichetta del canale.
-- Le date delle 90 recensioni multi-canale non erano disponibili in modo preciso, quindi il sito mostra "Data non indicata" per queste; per Google Maps e Trustpilot viene mostrata la data reale o relativa come su Google.
+- Google Maps (10): link alla scheda ufficiale AIPIA su Google, badge verde di fonte verificabile.
+- Trustpilot (2): link diretto alla recensione originale, badge verde.
+- LinkedIn (tra le 90): badge verde, essendo fonte pubblicamente verificabile.
+- Le altre provengono da canali diretti (WhatsApp, email, Instagram, Facebook Messenger, Telegram, feedback post-corso/webinar/evento/call, soci): etichetta del canale ma senza badge verde, perché non pubblicamente verificabili.
+- Le date delle 90 recensioni multi-canale non erano disponibili in modo preciso, quindi il sito mostra "Data non indicata" per queste.
 
 ## Prima di andare online
 
@@ -34,6 +39,6 @@ Sito statico (nessun build necessario per andare online: questi sono già i file
 
 Non serve toccare il codice: incollami in chat il testo delle recensioni (in qualsiasi formato, anche solo copia-incolla da Google/Trustpilot/WhatsApp) e ti rimando la home aggiornata o lo zip completo.
 
-## Nota
+## Nota sul consenso
 
 Alcune recensioni provengono da canali privati (WhatsApp, email, messaggi diretti). Prima di pubblicarle con nome e cognome, assicurati di avere il consenso della persona che le ha scritte.

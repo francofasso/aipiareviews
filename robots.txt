@@ -1,6 +1,12 @@
+# aipiarecensioni.com
+# Accesso aperto a tutti i crawler: questo sito esiste apposta per essere
+# letto, indicizzato e citato sia dai motori di ricerca sia dagli assistenti AI.
+
 User-agent: *
 Allow: /
 
+# Crawler dei principali assistenti AI, elencati esplicitamente per chiarezza
+# (sono comunque già inclusi da "User-agent: *" sopra, che non li blocca).
 User-agent: GPTBot
 Allow: /
 
@@ -10,16 +16,16 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://aipiarecensioni.com/sitemap.xml

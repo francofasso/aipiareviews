@@ -1,97 +1,279 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lascia una recensione, AIPIA Recensioni</title>
-<meta name="description" content="Racconta la tua esperienza con AIPIA, Associazione Italiana Professionisti dell'Intelligenza Artificiale. Il modulo e' protetto da anti-spam senza captcha a pagamento.">
+<title>Lascia una recensione | AIPIA Recensioni</title>
+<meta name="description" content="Racconta la tua esperienza con AIPIA, l'Associazione Italiana Professionisti dell'Intelligenza Artificiale. La tua recensione viene rivista prima della pubblicazione.">
 <link rel="canonical" href="https://aipiarecensioni.com/lascia-recensione">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#12203a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AIPIA Recensioni">
+<meta property="og:title" content="Lascia una recensione | AIPIA Recensioni">
+<meta property="og:url" content="https://aipiarecensioni.com/lascia-recensione">
+<meta property="og:image" content="https://aipiarecensioni.com/og-image.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Recensioni AIPIA", "item": "https://aipiarecensioni.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Lascia una recensione", "item": "https://aipiarecensioni.com/lascia-recensione" }
+  ]
+}
+</script>
+
+<style>
+  /* Stili specifici del form, tenuti qui per non appesantire style.css con regole usate in una sola pagina */
+  .review-form { max-width: 38rem; }
+  .review-form .field { margin-bottom: 1.4rem; }
+  .review-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+  }
+  .review-form .hint {
+    font-size: 0.82rem;
+    color: var(--color-ink-faint);
+    margin-top: 0.3rem;
+  }
+  .review-form input[type="text"],
+  .review-form input[type="email"],
+  .review-form input[type="url"],
+  .review-form textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    border-radius: 3px;
+  }
+  .review-form textarea { min-height: 9rem; resize: vertical; }
+  .rating-choice { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .rating-choice label {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-weight: 400; margin-bottom: 0;
+  }
+  .consent-field { display: flex; align-items: flex-start; gap: 0.6rem; }
+  .consent-field input { margin-top: 0.25rem; }
+  .consent-field label { font-weight: 400; font-size: 0.92rem; }
+  /* Honeypot: invisibile per le persone, i bot che compilano ogni campo ci cascano */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .form-status {
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
+    display: none;
+  }
+  .form-status.is-success { display: block; border-color: var(--color-verified); }
+  .form-status.is-error { display: block; border-color: #b3435a; }
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Vai al contenuto principale</a>
+
 <header class="site-header">
-  <div class="container">
-    <a class="logo" href="/">AIPIA Recensioni</a>
-    <nav class="site-nav" aria-label="Navigazione principale">
-      <a href="/">Recensioni</a>
-      <a href="/chi-siamo">Chi siamo</a>
-      <a href="/lascia-recensione" aria-current="page">Lascia una recensione</a>
+  <div class="wrap">
+    <a class="logo" href="/">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="8" fill="#12203a"/>
+        <circle cx="32" cy="32" r="24" fill="none" stroke="#a97c2b" stroke-width="2"/>
+        <path d="M32 16 L44 46 H38.5 L36 39 H28 L25.5 46 H20 Z M32 25.5 L28.8 34 H35.2 Z" fill="#fff"/>
+      </svg>
+      AIPIA Recensioni
+    </a>
+    <nav class="main-nav" aria-label="Navigazione principale">
+      <ul>
+        <li><a href="/">Recensioni</a></li>
+        <li><a href="/chi-siamo">Chi siamo</a></li>
+        <li><a href="https://aipia.it/">Sito AIPIA</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
-<main class="page container">
-  <h1>Lascia una recensione</h1>
-  <p>Hai partecipato a un corso, un evento o hai collaborato con AIPIA? Raccontaci la tua esperienza. La tua email non viene mai pubblicata, serve solo per verificare che la recensione sia autentica.</p>
+<main id="main">
+  <header class="page-header">
+    <div class="wrap">
+      <p class="breadcrumbs"><a href="/">Recensioni</a> / Lascia una recensione</p>
+      <h1>Lascia una recensione</h1>
+    </div>
+  </header>
 
-  <!--
-    NOTA PER CHI GESTISCE IL SITO:
-    sostituire l'URL qui sotto con il proprio endpoint Formspree reale
-    (es. https://formspree.io/f/xxxxxxx), creato gratuitamente su formspree.io
-  -->
-  <form class="review-form" data-review-form action="https://formspree.io/f/SOSTITUISCI-CON-IL-TUO-ID-FORMSPREE" method="POST">
-    <div class="hp-field" aria-hidden="true">
-      <label for="azienda_verifica">Non compilare questo campo</label>
-      <input type="text" id="azienda_verifica" name="azienda_verifica" tabindex="-1" autocomplete="off">
+  <div class="wrap prose review-form">
+    <p>Racconta la tua esperienza con AIPIA: un corso, un evento, una collaborazione. La tua recensione <strong>non viene pubblicata automaticamente</strong>: viene prima controllata dalla segreteria, per garantire che ogni recensione sul sito sia reale e riconducibile a chi l'ha scritta.</p>
+
+    <div class="form-status" data-status="success" role="status">
+      Grazie! La tua recensione è stata inviata ed è in attesa di revisione. Verrà pubblicata a breve se supera il controllo.
+    </div>
+    <div class="form-status" data-status="error" role="alert">
+      Qualcosa è andato storto nell'invio. Riprova tra poco, oppure scrivi direttamente a
+      <a href="mailto:segreteria@aipia.it">segreteria@aipia.it</a>.
     </div>
 
-    <label for="nome">Nome e cognome
-      <input type="text" id="nome" name="nome" required autocomplete="name">
-    </label>
-
-    <label for="ruolo">Ruolo o azienda (facoltativo)
-      <input type="text" id="ruolo" name="ruolo" autocomplete="organization-title">
-    </label>
-
-    <label for="email">Email (non verra' pubblicata)
-      <input type="email" id="email" name="email" required autocomplete="email">
-    </label>
-
-    <label for="linkedin">Profilo LinkedIn (facoltativo)
-      <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/...">
-    </label>
-
-    <fieldset>
-      <legend>Valutazione</legend>
-      <div class="rating-choice">
-        <label><input type="radio" name="valutazione" value="5" required> 5</label>
-        <label><input type="radio" name="valutazione" value="4"> 4</label>
-        <label><input type="radio" name="valutazione" value="3"> 3</label>
-        <label><input type="radio" name="valutazione" value="2"> 2</label>
-        <label><input type="radio" name="valutazione" value="1"> 1</label>
+    <form
+      id="review-form"
+      action="https://formspree.io/f/SOSTITUISCI-CON-IL-TUO-ID-FORMSPREE"
+      method="POST"
+    >
+      <!-- Honeypot anti-spam: un campo che una persona non vede e non compila mai.
+           Se arriva compilato, la richiesta viene scartata prima dell'invio. -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="azienda_verifica">Non compilare questo campo</label>
+        <input type="text" id="azienda_verifica" name="azienda_verifica" tabindex="-1" autocomplete="off">
       </div>
-    </fieldset>
 
-    <label for="testo">La tua recensione
-      <textarea id="testo" name="testo" required minlength="10"></textarea>
-    </label>
+      <div class="field">
+        <label for="nome">Nome e cognome *</label>
+        <input type="text" id="nome" name="nome" maxlength="80" required>
+      </div>
 
-    <label>
-      <input type="checkbox" name="consenso" required>
-      Acconsento al trattamento dei miei dati secondo la <a href="/privacy-policy">Privacy Policy</a> e autorizzo la pubblicazione di nome, ruolo, valutazione e testo della recensione sul sito.
-    </label>
+      <div class="field">
+        <label for="ruolo">Ruolo e azienda (facoltativo)</label>
+        <input type="text" id="ruolo" name="ruolo" maxlength="120" placeholder="Es. Data Scientist · Nome Azienda">
+      </div>
 
-    <button class="btn btn-primary" type="submit">Invia recensione</button>
+      <div class="field">
+        <label for="email">La tua email *</label>
+        <input type="email" id="email" name="email" required>
+        <p class="hint">Serve solo per verificare la recensione prima della pubblicazione. Non viene mai pubblicata sul sito.</p>
+      </div>
 
-    <p class="form-status" data-status="success">Grazie! La tua recensione e' stata inviata ed e' in attesa di verifica.</p>
-    <p class="form-status" data-status="error">Si e' verificato un problema durante l'invio.</p>
-  </form>
+      <div class="field">
+        <label for="linkedin">Link al tuo profilo LinkedIn (facoltativo)</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/...">
+        <p class="hint">Se lo indichi e acconsenti, lo mostriamo accanto alla recensione: aiuta chi legge a verificare che sia reale.</p>
+      </div>
+
+      <div class="field">
+        <label>Valutazione *</label>
+        <div class="rating-choice">
+          <label><input type="radio" name="valutazione" value="5" required> 5, Ottima</label>
+          <label><input type="radio" name="valutazione" value="4"> 4, Buona</label>
+          <label><input type="radio" name="valutazione" value="3"> 3, Nella media</label>
+          <label><input type="radio" name="valutazione" value="2"> 2, Sotto le aspettative</label>
+          <label><input type="radio" name="valutazione" value="1"> 1, Insufficiente</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="testo">La tua recensione *</label>
+        <textarea id="testo" name="testo" maxlength="1200" required placeholder="Racconta cosa hai fatto con AIPIA e come è andata."></textarea>
+      </div>
+
+      <div class="field consent-field">
+        <input type="checkbox" id="consenso" name="consenso" value="acconsento" required>
+        <label for="consenso">Acconsento alla pubblicazione di questa recensione con il mio nome e i dati indicati sopra (esclusa l'email), secondo la <a href="/privacy-policy">Privacy Policy</a> di aipiarecensioni.com. *</label>
+      </div>
+
+      <input type="hidden" name="_gotcha_loaded_at" data-loaded-at>
+      <input type="hidden" name="_subject" value="Nuova recensione da aipiarecensioni.com">
+
+      <button type="submit" class="btn btn-primary">Invia la recensione</button>
+    </form>
+  </div>
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2026 AIPIA, Associazione Italiana Professionisti dell'Intelligenza Artificiale.</p>
-    <p>
-      <a href="/chi-siamo">Chi siamo</a> &middot;
-      <a href="/privacy-policy">Privacy Policy</a> &middot;
-      <a href="/cookie-policy">Cookie Policy</a>
-    </p>
+  <div class="wrap footer-grid">
+    <p>© 2026 AIPIA, Associazione Italiana Professionisti dell'Intelligenza Artificiale.</p>
+    <ul class="footer-links">
+      <li><a href="/chi-siamo">Chi siamo</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/cookie-policy">Cookie Policy</a></li>
+      <li><a href="https://aipia.it/">aipia.it</a></li>
+    </ul>
   </div>
 </footer>
-<script src="/script.js"></script>
+
+<div id="cookie-banner" role="dialog" aria-label="Consenso cookie" aria-live="polite">
+  <p>Usiamo cookie tecnici necessari al funzionamento del sito ed eventuali cookie di misurazione anonima. Consulta la <a href="/cookie-policy">Cookie Policy</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-primary" data-cookie-accept>Accetta</button>
+    <button type="button" class="btn btn-secondary" data-cookie-reject>Rifiuta non necessari</button>
+  </div>
+</div>
+
+<script src="/script.js" defer></script>
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("review-form");
+  if (!form) return;
+
+  var loadedAt = Date.now();
+  var loadedAtField = form.querySelector("[data-loaded-at]");
+  if (loadedAtField) loadedAtField.value = String(loadedAt);
+
+  var successBox = document.querySelector('[data-status="success"]');
+  var errorBox = document.querySelector('[data-status="error"]');
+  var MIN_FILL_SECONDS = 4; // sotto questa soglia, quasi certamente un bot
+
+  form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    if (successBox) successBox.classList.remove("is-success");
+    if (errorBox) errorBox.classList.remove("is-error");
+
+    // Honeypot: se il campo nascosto è compilato, scarta silenziosamente
+    var honeypot = form.querySelector('[name="azienda_verifica"]');
+    if (honeypot && honeypot.value.trim() !== "") {
+      if (successBox) successBox.classList.add("is-success");
+      form.reset();
+      return;
+    }
+
+    // Trappola temporale: un invio troppo rapido è quasi sempre automatico
+    var elapsedSeconds = (Date.now() - loadedAt) / 1000;
+    if (elapsedSeconds < MIN_FILL_SECONDS) {
+      if (errorBox) {
+        errorBox.textContent = "Invio troppo rapido per essere reale: riprova con calma.";
+        errorBox.classList.add("is-error");
+      }
+      return;
+    }
+
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    })
+      .then(function (response) {
+        if (response.ok) {
+          if (successBox) successBox.classList.add("is-success");
+          form.reset();
+          loadedAt = Date.now();
+          if (loadedAtField) loadedAtField.value = String(loadedAt);
+        } else {
+          if (errorBox) errorBox.classList.add("is-error");
+        }
+      })
+      .catch(function () {
+        if (errorBox) errorBox.classList.add("is-error");
+      });
+  });
+})();
+</script>
 </body>
 </html>
