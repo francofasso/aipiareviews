@@ -2,32 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aipiarecensioni.com/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://aipiarecensioni.com/chi-siamo</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://aipiarecensioni.com/lascia-recensione</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://aipiarecensioni.com/privacy-policy</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://aipiarecensioni.com/cookie-policy</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-09-20</lastmod>
   </url>
 </urlset>

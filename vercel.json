@@ -13,13 +13,19 @@
       ]
     },
     {
-      "source": "/(favicon.svg|apple-touch-icon.png|icon-192.png|icon-512.png|og-image.png|style.css|script.js)",
+      "source": "/(favicon.svg|favicon-32.png|apple-touch-icon.png|icon-192.png|icon-512.png|og-image.png|site.webmanifest)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
       ]
     },
     {
-      "source": "/(sitemap.xml|robots.txt)",
+      "source": "/(style.css|script.js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/(sitemap.xml|robots.txt|llms.txt)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
